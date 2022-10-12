@@ -1,0 +1,84 @@
+@import "../../../../../styles/variables";
+
+.component {
+  position: relative;
+  overflow: hidden;
+  margin-top: 30px;
+
+  &-button-left,
+  &-button-right {
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    height: calc(100% - 50px);
+    width: 100px;
+    color: #fff;
+    text-shadow: 0 0 20px #000;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  &-button-left {
+    left: -100px;
+  }
+  &-button-right {
+    right: -100px;
+  }
+
+  &:hover {
+    .component-button-left {
+      left: 0;
+    }
+    .component-button-right {
+      right: 0;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  img {
+    height: 40px;
+  }
+  span {
+    font-size: 24px;
+  }
+}
+
+.shelf {
+  width: 100%;
+  display: flex;
+  position: relative;
+  scroll-behavior: smooth;
+
+  &-item {
+    margin: 20px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    position: relative;
+
+    &-img {
+      height: 300px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .component-button-left,
+  .component-button-right {
+    display: none;
+  }
+}

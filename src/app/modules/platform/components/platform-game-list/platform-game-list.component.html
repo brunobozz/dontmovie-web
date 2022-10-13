@@ -1,17 +1,17 @@
 <div class="list">
   <div class="row">
-    <ng-container *ngFor="let game of platformGames">
+    <ng-container *ngFor="let movie of movies">
       <div
-        *ngIf="game.title.toLowerCase().includes(searchTerm)"
+        *ngIf="movie.name.toLowerCase().includes(searchTerm)"
         class="col-6 col-sm-6 col-md-4 col-lg-3"
       >
-        <div class="list-item" (click)="letsGame(game.id)">
+        <a class="list-item" [href]="movie.url" target="_blank">
           <img
-            class="list-item-img size-{{ platform }}"
-            src="{{ game.cover }}"
-            alt="{{ game.title }}"
+            class="list-item-img"
+            src="{{ movie.logo }}"
+            alt="{{ movie.name }}"
           />
-        </div>
+        </a>
       </div>
     </ng-container>
   </div>

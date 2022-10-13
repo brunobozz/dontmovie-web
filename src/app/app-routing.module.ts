@@ -35,7 +35,7 @@ const routes: Routes = [
     component: PlayComponent,
   },
   {
-    path: 'platform/:platform',
+    path: 'category/:category',
     component: PlatformComponent,
   },
   {

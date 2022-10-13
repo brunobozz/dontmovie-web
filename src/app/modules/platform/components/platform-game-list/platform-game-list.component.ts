@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ServMovkApiService } from 'src/app/services/serv-mock/serv-movk-api.service';
 
 @Component({
   selector: 'app-platform-game-list',
@@ -7,12 +8,13 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./platform-game-list.component.scss'],
 })
 export class PlatformGameListComponent implements OnInit {
-  @Input() games: any;
   @Input() searchTerm: any;
-  public platform: any;
-  public platformGames: any = [];
+  public movies: any;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private apiService: ServMovkApiService
+  ) {}
 
   ngOnInit(): void {
     this.readPlatform();
@@ -20,29 +22,17 @@ export class PlatformGameListComponent implements OnInit {
 
   private readPlatform() {
     this.activatedRoute.params.subscribe((params) => {
-      if (params['platform']) {
-        this.platform = params['platform'];
-        this.filterList(params['platform']);
+      if (params['category']) {
+        this.getMovies(params['category']);
       }
     });
   }
 
-  private filterList(platform: string) {
-    this.games.map((game: any) => {
-      if (game.platform == platform) {
-        this.platformGames.push(game);
-      }
-      this.sortList();
-    });
-  }
-
-  private sortList() {
-    this.platformGames.sort((a: any, b: any) =>
-      a.title > b.title ? 1 : b.title > a.title ? -1 : 0
-    );
-  }
-
-  public letsGame(id: string) {
-    this.router.navigateByUrl('/game/' + id);
+  private async getMovies(category: string) {
+    this.apiService
+      .getData('/movies?category_like=' + category + '&_sort=name&_order=asc')
+      .subscribe((res: any) => {
+        this.movies = res;
+      });
   }
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { games } from 'src/app/content/games';
 import { ServMovkApiService } from 'src/app/services/serv-mock/serv-movk-api.service';
 
 @Component({
@@ -17,11 +16,12 @@ export class GameListComponent implements OnInit {
   }
 
   private getMovies() {
-    this.apiService.getData('/movies').subscribe((res: any) => {
-      this.movies = res;
-      this.sortListAsc(this.movies);
-      this.filter('category');
-    });
+    this.apiService
+      .getData('/movies?_sort=name&_order=asc')
+      .subscribe((res: any) => {
+        this.movies = res;
+        this.filter('category');
+      });
   }
 
   public sortListAsc(list: any) {

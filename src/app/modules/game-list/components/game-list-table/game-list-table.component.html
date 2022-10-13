@@ -11,7 +11,7 @@
         <ng-container *ngIf="movie.name.toLowerCase().includes(searchTerm)">
           <td>
             {{ i + 1 }} -
-            <a routerLink="/game/{{ movie.url }}">{{ movie.name }}</a>
+            <a [href]="movie.url" target="_blank">{{ movie.name }}</a>
           </td>
           <td class="text-end">
             {{ movie.category }}

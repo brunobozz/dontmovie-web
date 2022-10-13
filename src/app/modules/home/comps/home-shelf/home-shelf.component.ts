@@ -25,7 +25,7 @@ export class HomeShelfComponent implements OnInit {
 
   private async getMovies() {
     this.apiService
-      .getData('/movies?category_like=' + this.category)
+      .getData('/movies?category_like=' + this.category + '&_limit=50')
       .subscribe((res: any) => {
         this.movies = res;
         this.shuffleArray(this.movies);

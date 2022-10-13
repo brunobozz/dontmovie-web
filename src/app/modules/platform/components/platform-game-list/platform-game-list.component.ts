@@ -10,6 +10,7 @@ import { ServMovkApiService } from 'src/app/services/serv-mock/serv-movk-api.ser
 export class PlatformGameListComponent implements OnInit {
   @Input() searchTerm: any;
   public movies: any;
+  public category?: string;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -23,6 +24,7 @@ export class PlatformGameListComponent implements OnInit {
   private readPlatform() {
     this.activatedRoute.params.subscribe((params) => {
       if (params['category']) {
+        this.category = params['category'];
         this.getMovies(params['category']);
       }
     });

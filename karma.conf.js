@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/game-emulator'),
+      dir: require('path').join(__dirname, './coverage/dontmovie-web'),
       subdir: '.',
       reporters: [
         { type: 'html' },

@@ -6,7 +6,7 @@ import { ServThemeService } from './services/serv-theme/serv-theme.service';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = 'game-emulator';
+  title = 'dontmovie-web';
 
   constructor(private themeService: ServThemeService) {}
 

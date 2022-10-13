@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
+//INTERCEPTORS
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoadingInterceptorService } from './services/loading/loading-interceptor.service';
+
 // COMPONENTS
 import { AppComponent } from './app.component';
 import { MainNavbarComponent } from './components/main-navbar/main-navbar.component';
@@ -13,6 +17,7 @@ import { GameModule } from './modules/game/game.module';
 import { PlatformModule } from './modules/platform/platform.module';
 import { GameListModule } from './modules/game-list/game-list.module';
 import { PlayModule } from './modules/play/play.module';
+import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent, MainNavbarComponent],
@@ -25,8 +30,15 @@ import { PlayModule } from './modules/play/play.module';
     PlatformModule,
     GameListModule,
     PlayModule,
+    SharedModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

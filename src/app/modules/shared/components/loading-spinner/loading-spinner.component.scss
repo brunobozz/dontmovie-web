@@ -1,0 +1,74 @@
+@import "../../../../../styles/variables";
+
+.loading {
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  &-text {
+    color: $primary;
+    font-weight: bold;
+  }
+
+  &-img {
+    margin-top: 20px;
+    width: 50px;
+  }
+
+  &-spinner {
+    height: 140px;
+    width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    span {
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+    }
+    span:nth-child(1) {
+      border-top: 2px solid $primary;
+      height: 80px;
+      width: 80px;
+      animation: spinner 0.8s linear infinite;
+    }
+    span:nth-child(2) {
+      border-left: 2px solid $primary;
+      height: 100px;
+      width: 100px;
+      animation: spinner 1s linear infinite;
+    }
+    span:nth-child(3) {
+      border-bottom: 2px solid $primary;
+      height: 120px;
+      width: 120px;
+      animation: spinner 1.2s linear infinite;
+    }
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spinnerback {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}

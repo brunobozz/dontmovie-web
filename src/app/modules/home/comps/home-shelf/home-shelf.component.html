@@ -16,13 +16,14 @@
   </div>
   <div #shelf class="shelf scroll-y">
     <div *ngFor="let item of movies">
-      <div class="shelf-item" (click)="letsGame(item.name)">
+      <!-- <div class="shelf-item" (click)="letsGame(item.name)"> -->
+      <a class="shelf-item" [href]="item.url" target="_blank">
         <img
           class="shelf-item-img"
           src="{{ item.logo }}"
           alt="{{ item.name }}"
         />
-      </div>
+      </a>
     </div>
   </div>
 </div>

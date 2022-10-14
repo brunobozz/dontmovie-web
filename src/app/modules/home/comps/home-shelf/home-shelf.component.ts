@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServMovkApiService } from 'src/app/services/serv-mock/serv-movk-api.service';
+import { BackendApiService } from 'src/app/services/backend-api/backend-api.service';
 
 @Component({
   selector: 'app-home-shelf',
@@ -13,7 +13,7 @@ export class HomeShelfComponent implements OnInit {
 
   private elem!: HTMLElement;
 
-  constructor(private router: Router, private apiService: ServMovkApiService) {}
+  constructor(private router: Router, private apiService: BackendApiService) {}
 
   async ngOnInit() {
     await this.getMovies();

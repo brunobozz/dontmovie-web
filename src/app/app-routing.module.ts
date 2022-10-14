@@ -2,12 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CmdComponent } from './modules/cmd/cmd.component';
 import { CmdGameComponent } from './modules/cmd/routes/cmd-game/cmd-game.component';
-import { GameListComponent } from './modules/game-list/game-list.component';
-import { EmulatorjsComponent } from './modules/game/components/emulatorjs/emulatorjs.component';
-import { GameComponent } from './modules/game/game.component';
+import { MovieListComponent } from './modules/movie-list/movie-list.component';
+import { MovieComponent } from './modules/movie/movie.component';
 import { HomeComponent } from './modules/home/home.component';
 import { PlatformComponent } from './modules/platform/platform.component';
-import { PlayComponent } from './modules/play/play.component';
 
 const routes: Routes = [
   {
@@ -27,24 +25,16 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'game/:id',
-    component: GameComponent,
-  },
-  {
-    path: 'play/:id',
-    component: PlayComponent,
+    path: 'movie/:id',
+    component: MovieComponent,
   },
   {
     path: 'category/:category',
     component: PlatformComponent,
   },
   {
-    path: 'game-list',
-    component: GameListComponent,
-  },
-  {
-    path: 'emulatorjs',
-    component: EmulatorjsComponent,
+    path: 'movie-list',
+    component: MovieListComponent,
   },
 ];
 

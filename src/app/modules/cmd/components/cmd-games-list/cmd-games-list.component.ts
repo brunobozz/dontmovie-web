@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ServMovkApiService } from 'src/app/services/serv-mock/serv-movk-api.service';
+import { BackendApiService } from 'src/app/services/backend-api/backend-api.service';
 
 @Component({
   selector: 'app-cmd-games-list',
@@ -8,7 +8,7 @@ import { ServMovkApiService } from 'src/app/services/serv-mock/serv-movk-api.ser
 })
 export class CmdGamesListComponent implements OnInit {
   public gamesList: any;
-  constructor(private apiService: ServMovkApiService) {}
+  constructor(private apiService: BackendApiService) {}
 
   ngOnInit(): void {
     this.getGames();

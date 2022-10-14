@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { ServMovkApiService } from 'src/app/services/serv-mock/serv-movk-api.service';
+import { BackendApiService } from 'src/app/services/backend-api/backend-api.service';
 
 @Component({
-  selector: 'app-game-list',
-  templateUrl: './game-list.component.html',
+  selector: 'app-movie-list',
+  templateUrl: './movie-list.component.html',
 })
-export class GameListComponent implements OnInit {
+export class MovieListComponent implements OnInit {
   public term: string = '';
   public movies: any;
 
-  constructor(private apiService: ServMovkApiService) {}
+  constructor(private apiService: BackendApiService) {}
 
   ngOnInit(): void {
     this.getMovies();

@@ -13,10 +13,9 @@ import { MainNavbarComponent } from './components/main-navbar/main-navbar.compon
 // APP MODULES
 import { HomeModule } from './modules/home/home.module';
 import { CmdModule } from './modules/cmd/cmd.module';
-import { GameModule } from './modules/game/game.module';
+import { MovieModule } from './modules/movie/movie.module';
 import { PlatformModule } from './modules/platform/platform.module';
-import { GameListModule } from './modules/game-list/game-list.module';
-import { PlayModule } from './modules/play/play.module';
+import { MovieListModule } from './modules/movie-list/movie-list.module';
 import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
@@ -26,10 +25,9 @@ import { SharedModule } from './modules/shared/shared.module';
     AppRoutingModule,
     HomeModule,
     CmdModule,
-    GameModule,
+    MovieModule,
     PlatformModule,
-    GameListModule,
-    PlayModule,
+    MovieListModule,
     SharedModule,
   ],
   providers: [

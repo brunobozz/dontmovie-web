@@ -1,0 +1,27 @@
+<div class="movie" style="background-image: url('{{ movie.bg }}')">
+  <div class="movie-gradient-left"></div>
+  <div class="movie-info">
+    <img class="movie-info-logo" [src]="movie.logo" alt="movie logo" />
+    <div class="movie-info-text">
+      <span class="text-white">{{ movie.summary }}</span>
+    </div>
+    <button
+      class="btn btn-primary btn-lg mb-2"
+      routerLink="/play/{{ movie.id }}"
+    >
+      <i class="fa fa-play"></i>
+      <span> PLAY movie</span>
+    </button>
+    <div class="movie-info-actions">
+      <button class="btn btn-outline-white m-1">
+        <i class="fa fa-heart"></i>
+        <span> ADD TO FAVORITE</span>
+      </button>
+      <button class="btn btn-outline-white m-1">
+        <i class="fa fa-share-alt"></i>
+        <span> SHARE THIS MOVIE</span>
+      </button>
+    </div>
+    <app-movie-rating></app-movie-rating>
+  </div>
+</div>

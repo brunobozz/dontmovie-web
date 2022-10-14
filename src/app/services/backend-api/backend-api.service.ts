@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ServMovkApiService {
-  private API_PREFIX = 'https://dontmovie-api.herokuapp.com';
+export class BackendApiService {
+  private API_PREFIX = environment.backendApi;
 
   constructor(private http: HttpClient) {}
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { highlights } from 'src/app/content/highlights';
+import { BackendApiService } from 'src/app/services/backend-api/backend-api.service';
 
 @Component({
   selector: 'app-home-highlights',
@@ -7,9 +7,22 @@ import { highlights } from 'src/app/content/highlights';
   styleUrls: ['./home-highlights.component.scss'],
 })
 export class HomeHighlightsComponent implements OnInit {
-  public highlights = highlights;
+  public highlights: any = [];
 
-  constructor() {}
+  constructor(private apiService: BackendApiService) {}
 
-  ngOnInit(): void {}
+  async ngOnInit() {
+    this.getMovie('666');
+    this.getMovie('1111');
+    this.getMovie('500');
+  }
+
+  private getMovie(value: string) {
+    this.apiService
+      .getData('/movies?_limit=1&_page=' + value)
+      .subscribe((res: any) => {
+        console.log(res);
+        this.highlights.push(res[0]);
+      });
+  }
 }

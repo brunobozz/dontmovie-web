@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { ServMovkApiService } from 'src/app/services/serv-mock/serv-movk-api.service';
+import { ActivatedRoute } from '@angular/router';
+import { BackendApiService } from 'src/app/services/backend-api/backend-api.service';
 
 @Component({
   selector: 'app-platform-game-list',
@@ -14,7 +14,7 @@ export class PlatformGameListComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private apiService: ServMovkApiService
+    private apiService: BackendApiService
   ) {}
 
   ngOnInit(): void {

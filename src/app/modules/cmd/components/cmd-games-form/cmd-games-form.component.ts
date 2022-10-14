@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ServMovkApiService } from 'src/app/services/serv-mock/serv-movk-api.service';
 import { ToastrService } from 'ngx-toastr';
+import { BackendApiService } from 'src/app/services/backend-api/backend-api.service';
 
 @Component({
   selector: 'app-cmd-games-form',
@@ -17,7 +17,7 @@ export class CmdGamesFormComponent implements OnInit {
   });
 
   constructor(
-    private apiService: ServMovkApiService,
+    private apiService: BackendApiService,
     private toastr: ToastrService
   ) {}
 

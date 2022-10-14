@@ -1,4 +1,5 @@
 <div
+  *ngIf="highlights.length > 0"
   id="carouselExampleCaptions"
   class="carousel slide carousel-fade"
   data-bs-ride="carousel"
@@ -33,13 +34,12 @@
     >
       <div
         class="carousel-img"
-        style="background-image: url('{{ highlight.image }}');"
+        style="background-image: url('{{ highlight.logo }}');"
       ></div>
       <div class="carousel-gradient"></div>
       <img src="..." class="d-block w-100 another-img" alt="..." />
       <div class="carousel-caption">
-        <h5>{{ highlight.title }}</h5>
-        <p>{{ highlight.description }}</p>
+        <h5>{{ highlight.name }}</h5>
       </div>
     </div>
   </div>

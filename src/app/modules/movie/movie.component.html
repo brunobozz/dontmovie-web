@@ -1,0 +1,15 @@
+<app-movie-info [movie]="movie" (playMovie)="playMovie()"></app-movie-info>
+
+<app-movie-screens [screens]="movie.screens"></app-movie-screens>
+
+<div class="p-4" style="background-color: black">
+  <div class="container mt-4 mb-4 pb-4">
+    <h1>{{ movie.title }}</h1>
+    <img
+      [src]="movie.poster"
+      style="float: left; width: 200px; margin-right: 20px"
+      alt=""
+    />
+    <p [innerHTML]="movie.description"></p>
+  </div>
+</div>

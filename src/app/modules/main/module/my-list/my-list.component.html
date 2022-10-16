@@ -1,0 +1,8 @@
+<div class="container">
+  <ng-container *ngFor="let movie of movies">
+    <app-movie-box
+      [movie]="movie"
+      (refreshList)="refreshList($event)"
+    ></app-movie-box>
+  </ng-container>
+</div>

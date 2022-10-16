@@ -1,0 +1,38 @@
+<section class="login">
+  <img class="login-logo" src="./assets/logoFlat.png" alt="" />
+  <div class="card">
+    <div class="card-body text-center">
+      <p>Login</p>
+      <form
+        [formGroup]="loginForm"
+        (ngSubmit)="submitDocForm()"
+        class="login-form"
+      >
+        <div class="mb-3">
+          <input
+            type="text"
+            formControlName="username"
+            [ngClass]="{ 'is-invalid': fieldValidate('username') }"
+            class="form-control text-center"
+            placeholder="username"
+          />
+        </div>
+        <div class="mb-3">
+          <input
+            type="password"
+            formControlName="password"
+            [ngClass]="{ 'is-invalid': fieldValidate('password') }"
+            class="form-control text-center"
+            placeholder="password"
+          />
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Entrar</button>
+        </div>
+        <div class="pt-2">
+          <a class="text-primary small" href="#">Esqueci minha senha</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

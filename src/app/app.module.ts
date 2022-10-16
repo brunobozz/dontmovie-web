@@ -8,27 +8,28 @@ import { LoadingInterceptorService } from './services/loading/loading-intercepto
 
 // COMPONENTS
 import { AppComponent } from './app.component';
-import { MainNavbarComponent } from './components/main-navbar/main-navbar.component';
 
 // APP MODULES
-import { HomeModule } from './modules/home/home.module';
 import { CmdModule } from './modules/cmd/cmd.module';
-import { MovieModule } from './modules/movie/movie.module';
-import { PlatformModule } from './modules/platform/platform.module';
-import { MovieListModule } from './modules/movie-list/movie-list.module';
 import { SharedModule } from './modules/shared/shared.module';
+import { LoginModule } from './modules/login/login.module';
+import { MainModule } from './modules/main/main.module';
+import { MyListModule } from './modules/main/module/my-list/my-list.module';
+import { ProfileModule } from './modules/main/module/profile/profile.module';
 
 @NgModule({
-  declarations: [AppComponent, MainNavbarComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule,
-    CmdModule,
-    MovieModule,
-    PlatformModule,
-    MovieListModule,
+
+    //MODULES
     SharedModule,
+    LoginModule,
+    MainModule,
+    CmdModule,
+    MyListModule,
+    ProfileModule,
   ],
   providers: [
     {

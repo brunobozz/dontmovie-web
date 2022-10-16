@@ -21,4 +21,9 @@ export class BackendApiService {
   public deleteData(endPoint: string, id: string) {
     return this.http.delete(this.API_PREFIX + endPoint + id);
   }
+
+  public patchData(endPoint: string, data: any) {
+    window.localStorage.setItem('meFavorites', data.favorites.toString());
+    return this.http.patch(this.API_PREFIX + endPoint, data);
+  }
 }

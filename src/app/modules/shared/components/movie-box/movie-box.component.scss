@@ -1,0 +1,38 @@
+.movie-box {
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  position: relative;
+  margin: 5px;
+
+  &-favorite {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 30px;
+
+    i {
+      display: block;
+      text-shadow: 0 0 5px #000;
+    }
+
+    i.fa-heart-o {
+      display: none;
+      color: #fff;
+    }
+  }
+
+  &-cover {
+    width: 250px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+
+    .movie-box-favorite {
+      i.fa-heart-o {
+        display: block;
+      }
+    }
+  }
+}

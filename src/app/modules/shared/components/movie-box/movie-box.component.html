@@ -1,0 +1,12 @@
+<div *ngIf="movie" class="movie-box">
+  <div class="movie-box-favorite">
+    <i *ngIf="!favo" class="fa fa-heart-o" (click)="favorite()"></i>
+    <i *ngIf="favo" class="fa fa-heart text-danger" (click)="unfavorite()"></i>
+  </div>
+  <img
+    class="movie-box-cover"
+    src="{{ movie.logo }}"
+    alt="{{ movie.name }}"
+    (click)="play()"
+  />
+</div>

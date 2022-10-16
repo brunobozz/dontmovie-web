@@ -1,0 +1,22 @@
+.login {
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://stubbs.ca/wp-content/uploads/2015/02/tmn_bg.jpg");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .login-logo {
+    width: 200px;
+    max-width: 80%;
+    margin-bottom: 50px;
+  }
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 300px;
+}

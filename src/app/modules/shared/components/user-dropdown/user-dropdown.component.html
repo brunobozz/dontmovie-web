@@ -1,0 +1,14 @@
+<div class="dropdown">
+  <div
+    class="user-image"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    style="background-image: url('{{ user.image }}');"
+  ></div>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><a class="dropdown-item" routerLink="/profile">Ver Perfil</a></li>
+    <li><a class="dropdown-item" routerLink="/my-list">Minha Lista</a></li>
+    <li><hr class="dropdown-divider" /></li>
+    <li><a class="dropdown-item" (click)="logout()">Sair</a></li>
+  </ul>
+</div>

@@ -1,0 +1,22 @@
+<div class="component">
+  <div class="header container-fluid">
+    <h2>{{ category }}</h2>
+    <button
+      class="btn btn-outline-primary"
+      routerLink="/category/{{ category }}"
+    >
+      Ver mais
+    </button>
+  </div>
+  <div class="component-button-left" (click)="scrollShelfLeft(shelf)">
+    <i class="fa fa-chevron-left"></i>
+  </div>
+  <div class="component-button-right" (click)="scrollShelfRight(shelf)">
+    <i class="fa fa-chevron-right"></i>
+  </div>
+  <div #shelf class="shelf scroll-y">
+    <div *ngFor="let movie of movies">
+      <app-movie-box [movie]="movie"></app-movie-box>
+    </div>
+  </div>
+</div>

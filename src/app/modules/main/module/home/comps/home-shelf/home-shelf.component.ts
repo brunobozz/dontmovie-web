@@ -17,10 +17,6 @@ export class HomeShelfComponent implements OnInit {
 
   async ngOnInit() {
     await this.getMovies();
-
-    // gambiarra para evitar que o ramdom da shelf mude quando clica na seta de scroll
-    // para testar apenas comente a linha a baixo e clique na seta de scroll dentro do app
-    await this.scrollShelfLeft(this.elem);
   }
 
   private async getMovies() {

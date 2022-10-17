@@ -13,6 +13,11 @@ export class BackendApiService {
   public getData(endPoint: string) {
     return this.http.get(this.API_PREFIX + endPoint);
   }
+  public getDataSkip(endPoint: string) {
+    return this.http.get(this.API_PREFIX + endPoint, {
+      headers: { skip: 'true' },
+    });
+  }
 
   public postData(endPoint: string, data: any) {
     return this.http.post(this.API_PREFIX + endPoint, data);
@@ -25,5 +30,12 @@ export class BackendApiService {
   public patchData(endPoint: string, data: any) {
     window.localStorage.setItem('meFavorites', data.favorites.toString());
     return this.http.patch(this.API_PREFIX + endPoint, data);
+  }
+
+  public patchDataSkip(endPoint: string, data: any) {
+    window.localStorage.setItem('meFavorites', data.favorites.toString());
+    return this.http.patch(this.API_PREFIX + endPoint, data, {
+      headers: { skip: 'true' },
+    });
   }
 }

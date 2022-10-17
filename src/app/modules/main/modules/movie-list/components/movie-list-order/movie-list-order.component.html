@@ -1,0 +1,30 @@
+<form>
+  <div class="btn-group ms-2" role="order" aria-label="Order Search">
+    <div class="btn-group btn-group-sm" role="order">
+      <input
+        checked
+        type="radio"
+        class="btn-check"
+        name="btnradio"
+        id="orderAsc"
+        autocomplete="off"
+        (click)="orderBy('asc')"
+      />
+      <label class="btn btn-outline-primary" for="orderAsc">
+        <i class="fa fa-sort-alpha-asc"></i>
+      </label>
+
+      <input
+        type="radio"
+        class="btn-check"
+        name="btnradio"
+        id="orderDesc"
+        autocomplete="off"
+        (click)="orderBy('desc')"
+      />
+      <label class="btn btn-outline-primary" for="orderDesc">
+        <i class="fa fa-sort-alpha-desc"></i>
+      </label>
+    </div>
+  </div>
+</form>

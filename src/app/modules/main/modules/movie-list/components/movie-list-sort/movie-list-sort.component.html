@@ -1,0 +1,31 @@
+<form>
+  <div class="btn-group ms-2" role="sort" aria-label="Sort Search">
+    <div class="btn-group btn-group-sm" role="sort">
+      <button class="btn btn-outline-primary" style="pointer-events: none">
+        <i class="fa fa-sort-amount-desc"></i>
+      </button>
+      <input
+        checked
+        type="radio"
+        class="btn-check"
+        name="btnradio"
+        id="sortMovie"
+        autocomplete="off"
+        (click)="sortBy('name')"
+      />
+      <label class="btn btn-outline-primary" for="sortMovie">FILME</label>
+
+      <input
+        type="radio"
+        class="btn-check"
+        name="btnradio"
+        id="sortCategory"
+        autocomplete="off"
+        (click)="sortBy('category,name')"
+      />
+      <label class="btn btn-outline-primary" for="sortCategory"
+        >CATEGORIA</label
+      >
+    </div>
+  </div>
+</form>

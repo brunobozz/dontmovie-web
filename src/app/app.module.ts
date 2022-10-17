@@ -14,8 +14,8 @@ import { CmdModule } from './modules/cmd/cmd.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { LoginModule } from './modules/login/login.module';
 import { MainModule } from './modules/main/main.module';
-import { MyListModule } from './modules/main/module/my-list/my-list.module';
-import { ProfileModule } from './modules/main/module/profile/profile.module';
+import { MyListModule } from './modules/main/modules/my-list/my-list.module';
+import { ProfileModule } from './modules/main/modules/profile/profile.module';
 
 @NgModule({
   declarations: [AppComponent],

@@ -1,0 +1,30 @@
+<form>
+  <div class="btn-group ms-2" role="order" aria-label="Order Search">
+    <div class="btn-group btn-group-sm" role="order">
+      <input
+        checked
+        type="radio"
+        class="btn-check"
+        name="btnradio"
+        id="showImages"
+        autocomplete="off"
+        (click)="showBy('images')"
+      />
+      <label class="btn btn-outline-primary" for="showImages">
+        <i class="fa fa-th-large"></i>
+      </label>
+
+      <input
+        type="radio"
+        class="btn-check"
+        name="btnradio"
+        id="showList"
+        autocomplete="off"
+        (click)="showBy('list')"
+      />
+      <label class="btn btn-outline-primary" for="showList">
+        <i class="fa fa-bars"></i>
+      </label>
+    </div>
+  </div>
+</form>

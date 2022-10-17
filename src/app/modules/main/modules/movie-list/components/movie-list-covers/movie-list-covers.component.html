@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-between flex-wrap">
+  <!-- 
+    <ng-container *ngFor="let movie of movies">
+      <app-movie-box [movie]="movie"></app-movie-box>
+    </ng-container>
+  -->
+  <div class="row">
+    <div *ngFor="let movie of movies" class="col-lg-2 col-md-3 col-sm-4 col-6">
+      <app-movie-box
+        [movie]="movie"
+        imgWidth="100%"
+        imgMaxWidth="300px"
+      ></app-movie-box>
+    </div>
+  </div>
+</div>

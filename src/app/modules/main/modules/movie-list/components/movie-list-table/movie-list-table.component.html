@@ -1,0 +1,21 @@
+<div class="table-responsive">
+  <table class="table table-striped table-borderless align-middle">
+    <!-- <thead>
+      <tr>
+        <th scope="col">Movie</th>
+        <th scope="col" class="text-end">Category</th>
+      </tr>
+    </thead> -->
+    <tbody>
+      <tr *ngFor="let movie of movies; let i = index">
+        <td>
+          {{ i + 1 }} -
+          <a [href]="movie.url" target="_blank">{{ movie.name }}</a>
+        </td>
+        <td class="text-end">
+          {{ movie.category }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

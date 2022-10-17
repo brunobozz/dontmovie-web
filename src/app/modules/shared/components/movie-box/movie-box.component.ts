@@ -9,7 +9,10 @@ import { BackendApiService } from 'src/app/services/backend-api/backend-api.serv
 })
 export class MovieBoxComponent implements OnInit {
   @Input() movie: any;
+  @Input() imgWidth: any;
+  @Input() imgMaxWidth: any;
   @Output() refreshList = new EventEmitter();
+  public loading = false;
   private userId = window.localStorage.getItem('meId');
   private favorites: any;
   public favo?: boolean;
@@ -37,31 +40,40 @@ export class MovieBoxComponent implements OnInit {
   }
 
   public favorite() {
-    this.backendApi.getData('/users/' + this.userId).subscribe((res: any) => {
-      this.favorites = res.favorites;
-      this.favorites.push(this.movie.id.toString());
-      this.patchFavorite(this.favorites, 'Adicionado aos favoritos!');
-    });
+    this.loading = true;
+    this.backendApi
+      .getDataSkip('/users/' + this.userId)
+      .subscribe((res: any) => {
+        this.favorites = res.favorites;
+        this.favorites.push(this.movie.id.toString());
+        this.patchFavorite(this.favorites, 'Adicionado aos favoritos!');
+      });
   }
 
   public unfavorite() {
-    this.backendApi.getData('/users/' + this.userId).subscribe((res: any) => {
-      this.favorites = res.favorites;
-      this.favorites = this.favorites.filter(
-        (e: string) => e !== this.movie.id.toString()
-      );
-      this.patchFavorite(this.favorites, 'Removido dos favoritos!');
-    });
+    this.loading = true;
+    this.backendApi
+      .getDataSkip('/users/' + this.userId)
+      .subscribe((res: any) => {
+        this.favorites = res.favorites;
+        this.favorites = this.favorites.filter(
+          (e: string) => e !== this.movie.id.toString()
+        );
+        this.patchFavorite(this.favorites, 'Removido dos favoritos!');
+      });
   }
 
   public patchFavorite(favorites: any, message: string) {
     let data = {
       favorites: favorites,
     };
-    this.backendApi.patchData('/users/' + this.userId, data).subscribe(() => {
-      this.toastr.info(this.movie.name, message);
-      this.isFavorite();
-      this.refreshList.emit(this.movie.id);
-    });
+    this.backendApi
+      .patchDataSkip('/users/' + this.userId, data)
+      .subscribe(() => {
+        this.toastr.info(this.movie.name, message);
+        this.isFavorite();
+        this.refreshList.emit(this.movie.id);
+        this.loading = false;
+      });
   }
 }

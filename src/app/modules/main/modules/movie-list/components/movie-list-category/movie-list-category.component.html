@@ -1,0 +1,46 @@
+<div class="dropdown">
+  <button
+    class="btn btn-outline-primary btn-sm dropdown-toggle"
+    type="button"
+    id="dropdownMenuButton1"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    data-bs-auto-close="outside"
+  >
+    CATEGORIAS | {{ category }}
+  </button>
+  <ul
+    class="dropdown-menu dropdown-menu-end"
+    aria-labelledby="dropdownMenuButton1"
+  >
+    <form>
+      <li class="ps-2 cursor-pointer">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="categoryRadio"
+            id="checkTodas"
+            (click)="selectCategory('Todas')"
+          />
+          <label class="form-check-label" for="checkTodas">Todas</label>
+        </div>
+      </li>
+
+      <li *ngFor="let category of categories" class="ps-2 cursor-pointer">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="categoryRadio"
+            id="check{{ category }}"
+            (click)="selectCategory(category)"
+          />
+          <label class="form-check-label" for="check{{ category }}">{{
+            category
+          }}</label>
+        </div>
+      </li>
+    </form>
+  </ul>
+</div>

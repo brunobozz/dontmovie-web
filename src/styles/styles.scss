@@ -30,7 +30,7 @@ label:focus,
 .btn:active,
 .btn.active {
   outline: 0px !important;
-  -webkit-appearance: none;
+  appearance: none;
   box-shadow: none !important;
 }
 
@@ -70,4 +70,10 @@ label:focus,
 }
 .scroll-y:hover::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.2);
+}
+
+//Toastr
+.toast-container {
+  position: fixed !important;
+  margin-bottom: 20px !important;
 }

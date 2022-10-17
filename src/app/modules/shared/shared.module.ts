@@ -20,9 +20,9 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     RouterModule,
     ToastrModule.forRoot({
-      timeOut: 3000,
+      timeOut: 20000,
       positionClass: 'toast-botton-right',
-      maxOpened: 2,
+      maxOpened: 5,
       autoDismiss: true,
       preventDuplicates: true,
     }),

@@ -1,8 +1,13 @@
-<div class="container">
-  <ng-container *ngFor="let movie of movies">
+<div class="row">
+  <div
+    *ngFor="let movie of movies"
+    class="col-lg-2 col-md-3 col-sm-4 col-6"
+    style="padding: 5px"
+  >
     <app-movie-box
       [movie]="movie"
+      imgWidth="100%"
       (refreshList)="refreshList($event)"
     ></app-movie-box>
-  </ng-container>
+  </div>
 </div>

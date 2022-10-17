@@ -2,7 +2,6 @@
   display: inline-block;
   transition: all 0.1s ease-in-out;
   position: relative;
-  margin: 5px;
 
   &-spinner {
     position: absolute;
@@ -35,7 +34,6 @@
 
   &-cover {
     cursor: pointer;
-    width: 200px;
   }
 
   &:hover {

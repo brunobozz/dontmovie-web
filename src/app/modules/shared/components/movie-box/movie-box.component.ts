@@ -9,8 +9,8 @@ import { BackendApiService } from 'src/app/services/backend-api/backend-api.serv
 })
 export class MovieBoxComponent implements OnInit {
   @Input() movie: any;
-  @Input() imgWidth: any;
-  @Input() imgMaxWidth: any;
+  @Input() imgWidth?: string = '300px';
+  @Input() imgMaxWidth?: string;
   @Output() refreshList = new EventEmitter();
   public loading = false;
   private userId = window.localStorage.getItem('meId');

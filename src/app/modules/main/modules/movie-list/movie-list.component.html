@@ -4,7 +4,7 @@
       <i class="fa fa-search"></i>
       <span> Movie Search</span>
     </h2>
-    <div class="filters scroll-y">
+    <div class="filters">
       <app-movie-list-category
         (searchCategory)="searchCategory($event)"
       ></app-movie-list-category>
@@ -18,8 +18,8 @@
         (displayShow)="displayShow($event)"
       ></app-movie-list-display>
     </div>
+    <app-search-term (searchTerm)="searchTerm($event)"></app-search-term>
   </div>
-  <app-search-term (searchTerm)="searchTerm($event)"></app-search-term>
   <app-movie-list-table
     *ngIf="display == 'list'"
     [movies]="movies"

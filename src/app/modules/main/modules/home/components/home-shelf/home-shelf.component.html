@@ -17,7 +17,7 @@
     <i class="fa fa-chevron-right"></i>
   </div>
   <div #shelf class="shelf scroll-y">
-    <div *ngFor="let movie of movies">
+    <div *ngFor="let movie of movies" style="padding: 5px">
       <app-movie-box [movie]="movie"></app-movie-box>
     </div>
   </div>

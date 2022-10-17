@@ -7,6 +7,7 @@ import { UserDropdownComponent } from './components/user-dropdown/user-dropdown.
 import { RouterModule } from '@angular/router';
 import { MovieBoxComponent } from './components/movie-box/movie-box.component';
 import { ToastrModule } from 'ngx-toastr';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ToastrModule } from 'ngx-toastr';
     LoadingSpinnerComponent,
     UserDropdownComponent,
     MovieBoxComponent,
+    SpinnerComponent,
   ],
   imports: [
     CommonModule,

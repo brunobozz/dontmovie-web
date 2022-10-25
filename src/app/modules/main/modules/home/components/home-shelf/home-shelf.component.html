@@ -2,12 +2,14 @@
   <div class="header container-fluid">
     <h2>{{ category }}</h2>
     <div class="d-flex align-items-center">
-      <button
-        class="btn btn-outline-primary btn-sm"
+      <!-- // ===================================================== ARUMAR ESSA MERDA -->
+      <!-- <app-radio-size (changeSize)="changeSize($event)"></app-radio-size> -->
+      <!-- <button
+        class="btn btn-outline-primary btn-sm ms-2"
         routerLink="/category/{{ category }}"
       >
         Ver mais
-      </button>
+      </button> -->
     </div>
   </div>
   <div class="component-button-left" (click)="scrollShelfLeft(shelf)">
@@ -18,7 +20,7 @@
   </div>
   <div #shelf class="shelf scroll-y">
     <div *ngFor="let movie of movies" style="padding: 5px">
-      <app-movie-box [movie]="movie"></app-movie-box>
+      <app-movie-box [movie]="movie" imgWidth="{{ imgSize }}"></app-movie-box>
     </div>
   </div>
 </div>

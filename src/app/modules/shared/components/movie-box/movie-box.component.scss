@@ -2,6 +2,7 @@
   display: inline-block;
   transition: all 0.1s ease-in-out;
   position: relative;
+  box-shadow: 0 0 0px #000;
 
   &-spinner {
     position: absolute;
@@ -24,6 +25,15 @@
     i {
       display: block;
       text-shadow: 0 0 5px #000;
+      transition: all 0.05s ease-in-out;
+    }
+
+    i:hover {
+      transform: scale(1.1);
+    }
+
+    i:active {
+      transform: scale(1);
     }
 
     i.fa-heart-o {
@@ -38,6 +48,8 @@
 
   &:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 50px #000;
+    z-index: 1;
 
     .movie-box-favorite {
       i.fa-heart-o {

@@ -10,6 +10,7 @@ import { BackendApiService } from 'src/app/services/backend-api/backend-api.serv
 export class HomeShelfComponent implements OnInit {
   @Input() category?: string;
   public movies: any;
+  public imgSize = '200px';
 
   private elem!: HTMLElement;
 
@@ -44,5 +45,22 @@ export class HomeShelfComponent implements OnInit {
 
   public letsGame(id: string) {
     this.router.navigateByUrl('/play/' + id);
+  }
+
+  // ===================================================== ARUMAR ESSA MERDA
+  public changeSize(event: any) {
+    switch (event) {
+      case '1x':
+        this.imgSize = '100px';
+        break;
+      case '2x':
+        this.imgSize = '200px';
+        break;
+      case '3x':
+        this.imgSize = '300px';
+        break;
+      default:
+        this.imgSize = '100px';
+    }
   }
 }

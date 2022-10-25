@@ -14,4 +14,5 @@ export const categories: any = [
   'Drama/Suspense',
   'Policial',
   'Clássicos',
+  'Adultos',
 ];

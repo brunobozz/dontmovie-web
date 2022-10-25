@@ -6,6 +6,11 @@ html,
 body {
   background-color: #111111;
   overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  overflow-y: auto;
 }
 
 .font-fredoka {

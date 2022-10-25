@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-navbar',
@@ -15,9 +15,12 @@ export class MainNavbarComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe((event: any) => {
       if (event instanceof NavigationEnd) {
-        this.route = event.url;
+        console.log(event);
+        this.route = event.urlAfterRedirects;
       }
     });
+
+    this.route = this.router.url;
   }
 
   public back(): void {

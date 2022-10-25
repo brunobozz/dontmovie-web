@@ -5,6 +5,7 @@
       <span> BACK</span>
     </button>
     <img
+      *ngIf="route == '/home'"
       src="./assets/logoFlat.png"
       class="ms-2"
       height="40px"
@@ -13,7 +14,11 @@
     />
   </div>
   <div class="d-flex">
-    <button class="btn btn-sm me-2" routerLink="movie-list">
+    <button
+      *ngIf="route == '/home'"
+      class="btn btn-sm me-2"
+      routerLink="movie-list"
+    >
       <i class="fa fa-search"></i>
       <span> Movie Search</span>
     </button>

@@ -44,6 +44,8 @@
 
   &-cover {
     cursor: pointer;
+    background-image: url("../../../../../assets/cover.jpg");
+    background-size: cover;
   }
 
   &:hover {

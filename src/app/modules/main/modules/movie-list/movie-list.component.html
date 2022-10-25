@@ -7,23 +7,25 @@
     (searchTerm)="searchTerm($event)"
     class="search-field"
   ></app-search-term>
-  <div class="filters">
-    <app-movie-list-category
-      (searchCategory)="searchCategory($event)"
-      style="margin: 5px"
-    ></app-movie-list-category>
-    <app-movie-list-sort
-      (searchSort)="searchSort($event)"
-      style="margin: 5px"
-    ></app-movie-list-sort>
-    <app-movie-list-order
-      (searchOrder)="searchOrder($event)"
-      style="margin: 5px"
-    ></app-movie-list-order>
-    <app-movie-list-display
-      (displayShow)="displayShow($event)"
-      style="margin: 5px"
-    ></app-movie-list-display>
+  <div class="filters scroll-y">
+    <div class="filters-content">
+      <app-movie-list-category
+        (searchCategory)="searchCategory($event)"
+        style="margin: 5px"
+      ></app-movie-list-category>
+      <app-movie-list-sort
+        (searchSort)="searchSort($event)"
+        style="margin: 5px"
+      ></app-movie-list-sort>
+      <app-movie-list-order
+        (searchOrder)="searchOrder($event)"
+        style="margin: 5px"
+      ></app-movie-list-order>
+      <app-movie-list-display
+        (displayShow)="displayShow($event)"
+        style="margin: 5px"
+      ></app-movie-list-display>
+    </div>
   </div>
 </div>
 <div class="container-fluid">

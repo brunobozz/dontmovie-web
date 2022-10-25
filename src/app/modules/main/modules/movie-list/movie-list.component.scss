@@ -3,11 +3,30 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  padding-bottom: 5px;
+  padding: 5px;
+  // position: sticky;
+  // top: 60px;
+  // z-index: 10;
+  // background-color: rgba(0, 0, 0, 0.8);
+
+  .search-field {
+    padding: 5px;
+  }
 
   .filters {
     display: flex;
     flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .tools {
+    .search-field {
+      width: 100%;
+    }
+    .filters {
+      width: 100%;
+      justify-content:flex-end;
+    }
   }
 }

@@ -16,6 +16,7 @@ export class MovieBoxComponent implements OnInit {
   private userId = window.localStorage.getItem('meId');
   private favorites: any;
   public favo?: boolean;
+  public loaded = false;
 
   constructor(
     private backendApi: BackendApiService,
@@ -24,6 +25,10 @@ export class MovieBoxComponent implements OnInit {
 
   ngOnInit(): void {
     this.isFavorite();
+  }
+
+  public imgLoaded() {
+    this.loaded = true;
   }
 
   private isFavorite() {

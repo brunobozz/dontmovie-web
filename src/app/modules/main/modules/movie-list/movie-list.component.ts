@@ -25,7 +25,7 @@ export class MovieListComponent implements OnInit {
   }
 
   private endPoint() {
-    return (
+    let endpoint =
       '/movies?_limit=' +
       this.search.limit +
       '&category_like=' +
@@ -37,11 +37,12 @@ export class MovieListComponent implements OnInit {
       '&name_like=' +
       this.search.term +
       '&_page=' +
-      this.search.page
-    );
+      this.search.page;
+    return endpoint;
   }
 
   private getMovies() {
+    this.search.page = '1';
     this.apiService.getData(this.endPoint()).subscribe((res: any) => {
       this.movies = res;
     });

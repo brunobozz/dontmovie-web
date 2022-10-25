@@ -37,4 +37,7 @@
   [movies]="movies"
 ></app-movie-list-covers> -->
 <app-movie-grid *ngIf="display == 'images'" [movies]="movies"></app-movie-grid>
-<app-movie-list-load-more (loadMore)="loadMore()"></app-movie-list-load-more>
+<app-movie-list-load-more
+  *ngIf="movies && movies.length >= search.limit"
+  (loadMore)="loadMore()"
+></app-movie-list-load-more>

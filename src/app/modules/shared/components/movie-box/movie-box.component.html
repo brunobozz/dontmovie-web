@@ -1,5 +1,8 @@
 <div *ngIf="movie" class="movie-box">
-  <div *ngIf="loading" class="movie-box-spinner">
+  <div
+    *ngIf="loading || !loaded"
+    class="movie-box-spinner"
+  >
     <app-spinner></app-spinner>
   </div>
   <div class="movie-box-favorite">
@@ -12,5 +15,6 @@
     alt="{{ movie.name }}"
     [ngStyle]="{ width: imgWidth, 'max-width': imgMaxWidth }"
     (click)="play()"
+    (load)="imgLoaded()"
   />
 </div>

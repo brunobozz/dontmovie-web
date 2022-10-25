@@ -1,0 +1,11 @@
+<section class="movie-grid">
+  <div class="row">
+    <div *ngFor="let movie of movies" class="col-lg-2 col-md-3 col-sm-4 col-6">
+      <app-movie-box
+        [movie]="movie"
+        imgWidth="100%"
+        (refreshList)="refreshGrid($event)"
+      ></app-movie-box>
+    </div>
+  </div>
+</section>

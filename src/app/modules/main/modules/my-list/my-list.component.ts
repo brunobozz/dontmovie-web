@@ -30,8 +30,6 @@ export class MyListComponent implements OnInit {
   }
 
   public refreshList(event: any) {
-    console.log(this.movies);
     this.movies = this.movies.filter((e: any) => e.id !== event);
-    console.log(this.movies);
   }
 }

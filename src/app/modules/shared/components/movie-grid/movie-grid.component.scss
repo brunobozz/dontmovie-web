@@ -1,0 +1,14 @@
+.movie-grid {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 3px;
+
+  .row {
+    padding-bottom: 5px;
+    overflow: hidden;
+
+    [class^="col"] {
+      padding: 5px;
+    }
+  }
+}

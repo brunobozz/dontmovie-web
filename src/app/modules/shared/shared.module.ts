@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { MovieBoxComponent } from './components/movie-box/movie-box.component';
 import { ToastrModule } from 'ngx-toastr';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { MovieGridComponent } from './components/movie-grid/movie-grid.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     UserDropdownComponent,
     MovieBoxComponent,
     SpinnerComponent,
+    MovieGridComponent,
   ],
   imports: [
     CommonModule,
@@ -34,6 +36,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     LoadingSpinnerComponent,
     UserDropdownComponent,
     MovieBoxComponent,
+    SpinnerComponent,
+    MovieGridComponent,
   ],
 })
 export class SharedModule {}
